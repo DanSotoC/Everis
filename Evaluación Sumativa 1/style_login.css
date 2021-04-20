@@ -1,0 +1,99 @@
+body{
+    margin: 0;
+    padding:0;
+    font-family:'Poppins',sans-serif;
+    font-size: 14px;
+    
+    background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0)), url('https://www.conadecus.cl/content/uploads/2017/10/ley_de_estacionamientos_0.jpg');
+    
+    color: white;
+    height: 100vh;
+            -webkit-background-size:cover;
+            background-size: cover;
+            background-position: center center;
+            position: relative;
+}
+
+.login-container{
+    height:100vh ;
+    width: 100%;
+    backdrop-filter: blur(6px);
+    
+}
+
+.login-form{
+    max-width:100%;
+    width: 370px;
+    padding: 15px;
+    margin: auto;
+    
+}
+
+.form-control{
+    font-size: 15px;
+    min-height: 48px;
+    font-weight:500; 
+}
+.form-control:focus{
+    border-color: #723dbe;
+    box-shadow: 0 0 0 0.2rem rgba(114,61,190, .25);
+}
+
+.btn-custom{
+    background: #723dbe;
+    border-color: #723dbe;
+    color:#fff;
+    font-weight:600;
+    min-height: 48px;
+}
+.btn-custom:focus,.btn-custom:hover,.btn-custom:active,.btn-custom:active:focus{
+    background: #54229d;
+    border-color: #54229d;
+    color:#fff;
+}
+.btn-custom:focus{
+    box-shadow: 0 0 0 0.2rem rgba(114,61,190, .25);
+}
+
+.form-group::before{
+    font-family: "Font Awesome\ 5 free";
+    position: relative;
+    left: -140px;
+    top:40px;
+    font-size: 24px;
+    padding-top:4px;
+}
+
+.form-group#icon::before{
+    content:"\f007" ;
+    color: #54229D;
+}
+
+.form-group#icon2::before{
+    content: "\f023" ;
+    color: #54229D; 
+}
+
+.form-group input{
+
+    border:0;
+    padding-left: 54px;
+    border-radius: 5px;
+}
+
+#eyes{
+    position: relative;
+    left: 150px;
+    margin-left: -35px;
+    top:45px;
+    font-size: 24px;
+    
+    color: #54229D;
+}
+
+
+
+#eye2{
+    display: none;
+    
+}

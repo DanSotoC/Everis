@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style_login.css">
+</head>
+	<title>Login</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta content="telephone=no" name="format-detection">
+<body>
+    <div class="login-container d-flex align-items-center justify-content-center">
+        <form id="login_form" class="login-form text-center " method="POST">
+            <h1 class="mb-5 font-weight-light text-uppercase ">Login</h1>
+            <div class="form-group" id="icon" > 
+                <input type="text" class="form-control rounded-pill form-controll-lg" name="email" id="email_login" placeholder="Correo"  autocomplete="off" >
+            </div>
+            <div class="form-group " id="icon2">
+                <span id="eyes" onclick="Ocultar_Mostar()">
+                    <i class="fa fa-eye" id="eye1" ></i>
+                    <i class="fa fa-eye-slash" id="eye2"></i>
+                </span>
+                <input type="password" class="form-control rounded-pill form-controll-lg" name="password" id="password_login" placeholder="Clave" autocomplete="off">
+                
+            </div>
+            <div>
+                <button type="submit" id="login_btn" class="btn mt-5 btn-custom btn-block text_uppercase rounded-pill w3-button w3-padding-large w3-hover-green" style='width:350px; height:50px'>Acceder</button>
+                <button type="button" class="btn mt-5 btn-custom btn-block text_uppercase rounded-pill w3-button w3-padding-large w3-hover-blue" style='width:350px; height:50px'>Registro</button>
+            </div>
+            
+
+        </form>
+    </div>
+    <script>
+        function Ocultar_Mostar(){
+            var x = document.getElementById("password_login");
+            var y = document.getElementById("eye1");
+            var z = document.getElementById("eye2");
+
+            if (x.type == 'password'){
+                    x.type="text";
+                    z.style.display="inline";
+                    y.style.display="none";
+            }
+            else{
+                    x.type="password";
+                    y.style.display="inline";
+                    z.style.display="none";
+            }   
+        };
+        
+        login_form.addEventListener('submit',(e) => {
+                e.preventDefault();
+                const email = document.querySelector('#email_login').value;
+                const password = document.querySelector('#password_login').value;
+                if(email == 'mail@mail.com' && password == 'prueba123'){
+                    window.location = 'index.html'
+                }          
+        })
+
+
+    </script>
+</body>     
+</html>

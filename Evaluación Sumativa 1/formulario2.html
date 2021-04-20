@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Formulario</title>
+</head>
+
+<body class="w3-white">
+  <div class="nav">
+    <a href="index.html">Inicio</a></li>
+    <a href="formulario2.html">Reserva</a></li>
+    <a href="formulario1.html">Registrarse</a>
+</div>
+  <div class="w3-padding-64 w3-content w3-text-grey col-md-4" style="align-self: center;">
+    <h1 class="w3-text-black">Formulario de Rerva</h1>
+
+    <form id="reserva_form" method="" action="index.html" style="align-self: center;">
+      <label for="trabajador" class="w3-text-ligth-blue">Personal A Cargo </label> 
+      <select id="trabajador" name="trabajador" required>
+        <option value="" selected="selected">- Selecciona -</option>
+        <option value="Juan">Juan Soto</option>
+        <option value="Claudio">Claudio Reyes</option>
+        <option value="Ximena">Ximena Toledo</option>
+        <option value="Catalina">Catalina Díaz</option>
+        <option value="Esteban">Esteban Casas</option>
+        <option value="Luis">Luis Machuca</option>
+      </select> <br><br>
+      <label for="servicio" class="w3-text-ligth-blue">Servicio</label> 
+      <select id="servicio" name="servicio" required>
+        <option value="" selected="selected">- Selecciona -</option>
+        <option value='1'>Lavado Exterior - $5000.- </option>
+        <option value='2'>Lavado Motor - $8000.- </option>
+      </select> <br>
+      <p>Fecha de Reserva </p>
+      <p><input id="fecha_reserva" type="date" required
+        name="Fecha_reserva"></p>
+      <p>
+      <p>Hora de Reserva </p>
+      <p><input id="hora_reserva" type="time" required
+          name="Hora_reserva"></p>
+      <p>   
+      <br><br>       
+
+        <button class="w3-button w3-light-grey w3-padding-large w3-hover-green" type="submit">
+          <i class="fa fa-paper-plane"></i> GUARDAR
+        </button>
+      </p>
+    </form>
+  </div>
+
+  <script>
+        reserva_form.addEventListener('submit',(e) => {
+                e.preventDefault();
+                const trabajador = document.getElementById("trabajador").value;
+                const servicio = document.getElementById("servicio").value;
+                const fecha = document.getElementById("fecha_reserva").value;
+                const hora = document.getElementById("hora_reserva").value;
+                var valor = 0
+                if(servicio == '1' ){
+                     valor = 5000
+                }else if(servicio == '2'){
+                     valor = 8000
+                }
+                if(trabajador != '' && servicio != '' && fecha != '' && hora != "" ){
+                    alert("Valor a Pagar: $"+ valor)
+                    window.location = 'index.html'
+                }          
+        })
+  </script>
+
+</body>
+</html>
