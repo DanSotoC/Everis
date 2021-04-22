@@ -1,15 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div></div>
+<div class="container-fluid" style="margin: 3em;">
+    <div class="row">
+        <div class="col"> 
+            <form [formGroup]="formulario"  novalidate (ngSubmit)="metodo()" slot="col md 2" target="_blank">
+                <div class="col-sm">
+                    <h3> Ingreso de Productos</h3>
+                    <div class="row g-3 align-items-center" style="width: 600px;">
+                        <div class="col align-self-center"><br>
+                            <label for="code" class="form-label"><!-- Codigo:  --></label>
+                            <input type="number" class="form-control" id="code" placeholder="Ingrese Codigo de Producto" formControlName="code" ngModel required/>
+                                    
+                            <label for="name" class="form-label"><!-- Nombre del Producto:  --></label>
+                            <input type="text" class="form-control" id="name" placeholder="Escriba el nombre del Producto" formControlName="name" ngModel required/>
 
+                            <label for="price" class="form-label"><!-- Precio:  --></label>
+                            <input type="number" class="form-control" id="price" placeholder="Ingrese el precio del Producto" formControlName="price" ngModel required/>
 
-</body>
-<app-product></app-product>
-</html>
+                            <label for="description" class="form-label"><!-- Descripcion del Producto:  --></label>
+                            <input type="text" class="form-control" id="description" placeholder="Escriba una description del Producto" formControlName="description" ngModel required />
+                        </div>           
+                        <button class="btn btn-primary" type="submit">Imprimir</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col">
+            <h3> Listado de Productos</h3>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item" *ngIf="carro.code">Codigo: {{carro.code}} <i>Editar</i><i>Borrar</i></li>
+              <li class="list-group-item" *ngIf="carro.name">Nombre del Producto: {{carro.name}}</li>
+              <li class="list-group-item" *ngIf="carro.price">Precio: {{carro.price}}</li>
+              <li class="list-group-item" *ngIf="carro.description">Descripcion: {{carro.description}}</li>
+            </ul>
+        </div>
+    </div>
+</div>
